@@ -16,6 +16,27 @@
 		44C1AF0818A3A70600E24FD3 /* libGSTween.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C1AEF018A3A70600E24FD3 /* libGSTween.a */; };
 		44C1AF0E18A3A70600E24FD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44C1AF0C18A3A70600E24FD3 /* InfoPlist.strings */; };
 		44C1AF1018A3A70600E24FD3 /* GSTweenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C1AF0F18A3A70600E24FD3 /* GSTweenTests.m */; };
+		44C1AF1C18A3A74500E24FD3 /* Linear.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C1AF1B18A3A74500E24FD3 /* Linear.m */; };
+		44C1AF1F18A3A80100E24FD3 /* Sine.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C1AF1E18A3A80100E24FD3 /* Sine.m */; };
+		44C1AF2118A3AD5700E24FD3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C1AF2018A3AD5700E24FD3 /* QuartzCore.framework */; };
+		44C1AF2318A3AD5E00E24FD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C1AF2218A3AD5E00E24FD3 /* UIKit.framework */; };
+		44FC384118A3FC5B00DB233A /* Linear.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44C1AF1A18A3A74500E24FD3 /* Linear.h */; };
+		44FC384218A3FC5B00DB233A /* Sine.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44C1AF1D18A3A80100E24FD3 /* Sine.h */; };
+		44FC384418A3FD3200DB233A /* Linear.h in Headers */ = {isa = PBXBuildFile; fileRef = 44C1AF1A18A3A74500E24FD3 /* Linear.h */; };
+		44FC384518A3FD3200DB233A /* Sine.h in Headers */ = {isa = PBXBuildFile; fileRef = 44C1AF1D18A3A80100E24FD3 /* Sine.h */; };
+		44FC384618A3FD3200DB233A /* GSTween.h in Headers */ = {isa = PBXBuildFile; fileRef = 44C1AEF818A3A70600E24FD3 /* GSTween.h */; };
+		44FC388D18A4113D00DB233A /* GSTweenData.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FC388B18A4113D00DB233A /* GSTweenData.h */; };
+		44FC388E18A4113D00DB233A /* GSTweenData.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC388C18A4113D00DB233A /* GSTweenData.m */; };
+		44FC388F18A41FAB00DB233A /* GSTweenData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44FC388B18A4113D00DB233A /* GSTweenData.h */; };
+		44FC389218A4242C00DB233A /* Elastic.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FC389018A4242C00DB233A /* Elastic.h */; };
+		44FC389318A4242C00DB233A /* Elastic.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC389118A4242C00DB233A /* Elastic.m */; };
+		44FC389418A4249B00DB233A /* Elastic.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44FC389018A4242C00DB233A /* Elastic.h */; };
+		44FC389718A4251A00DB233A /* Bounce.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FC389518A4251A00DB233A /* Bounce.h */; };
+		44FC389818A4251A00DB233A /* Bounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC389618A4251A00DB233A /* Bounce.m */; };
+		44FC389918A4258400DB233A /* Bounce.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44FC389518A4251A00DB233A /* Bounce.h */; };
+		44FC389C18A428C900DB233A /* Expo.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FC389A18A428C900DB233A /* Expo.h */; };
+		44FC389D18A428C900DB233A /* Expo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC389B18A428C900DB233A /* Expo.m */; };
+		44FC389E18A4293000DB233A /* Expo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44FC389A18A428C900DB233A /* Expo.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +56,12 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				44FC389E18A4293000DB233A /* Expo.h in CopyFiles */,
+				44FC389918A4258400DB233A /* Bounce.h in CopyFiles */,
+				44FC389418A4249B00DB233A /* Elastic.h in CopyFiles */,
+				44FC388F18A41FAB00DB233A /* GSTweenData.h in CopyFiles */,
+				44FC384118A3FC5B00DB233A /* Linear.h in CopyFiles */,
+				44FC384218A3FC5B00DB233A /* Sine.h in CopyFiles */,
 				44C1AEF918A3A70600E24FD3 /* GSTween.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +80,20 @@
 		44C1AF0B18A3A70600E24FD3 /* GSTweenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GSTweenTests-Info.plist"; sourceTree = "<group>"; };
 		44C1AF0D18A3A70600E24FD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		44C1AF0F18A3A70600E24FD3 /* GSTweenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSTweenTests.m; sourceTree = "<group>"; };
+		44C1AF1A18A3A74500E24FD3 /* Linear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Linear.h; sourceTree = "<group>"; };
+		44C1AF1B18A3A74500E24FD3 /* Linear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Linear.m; sourceTree = "<group>"; };
+		44C1AF1D18A3A80100E24FD3 /* Sine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sine.h; sourceTree = "<group>"; };
+		44C1AF1E18A3A80100E24FD3 /* Sine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sine.m; sourceTree = "<group>"; };
+		44C1AF2018A3AD5700E24FD3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		44C1AF2218A3AD5E00E24FD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		44FC388B18A4113D00DB233A /* GSTweenData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTweenData.h; sourceTree = "<group>"; };
+		44FC388C18A4113D00DB233A /* GSTweenData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTweenData.m; sourceTree = "<group>"; };
+		44FC389018A4242C00DB233A /* Elastic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Elastic.h; sourceTree = "<group>"; };
+		44FC389118A4242C00DB233A /* Elastic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Elastic.m; sourceTree = "<group>"; };
+		44FC389518A4251A00DB233A /* Bounce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bounce.h; sourceTree = "<group>"; };
+		44FC389618A4251A00DB233A /* Bounce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bounce.m; sourceTree = "<group>"; };
+		44FC389A18A428C900DB233A /* Expo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expo.h; sourceTree = "<group>"; };
+		44FC389B18A428C900DB233A /* Expo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C1AF2318A3AD5E00E24FD3 /* UIKit.framework in Frameworks */,
+				44C1AF2118A3AD5700E24FD3 /* QuartzCore.framework in Frameworks */,
 				44C1AEF418A3A70600E24FD3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +143,8 @@
 		44C1AEF218A3A70600E24FD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44C1AF2218A3AD5E00E24FD3 /* UIKit.framework */,
+				44C1AF2018A3AD5700E24FD3 /* QuartzCore.framework */,
 				44C1AEF318A3A70600E24FD3 /* Foundation.framework */,
 				44C1AF0118A3A70600E24FD3 /* XCTest.framework */,
 				44C1AF0418A3A70600E24FD3 /* UIKit.framework */,
@@ -110,9 +155,12 @@
 		44C1AEF518A3A70600E24FD3 /* GSTween */ = {
 			isa = PBXGroup;
 			children = (
+				44C1AF1918A3A71300E24FD3 /* easings */,
 				44C1AEF818A3A70600E24FD3 /* GSTween.h */,
 				44C1AEFA18A3A70600E24FD3 /* GSTween.m */,
 				44C1AEF618A3A70600E24FD3 /* Supporting Files */,
+				44FC388B18A4113D00DB233A /* GSTweenData.h */,
+				44FC388C18A4113D00DB233A /* GSTweenData.m */,
 			);
 			path = GSTween;
 			sourceTree = "<group>";
@@ -143,7 +191,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		44C1AF1918A3A71300E24FD3 /* easings */ = {
+			isa = PBXGroup;
+			children = (
+				44C1AF1A18A3A74500E24FD3 /* Linear.h */,
+				44C1AF1B18A3A74500E24FD3 /* Linear.m */,
+				44C1AF1D18A3A80100E24FD3 /* Sine.h */,
+				44C1AF1E18A3A80100E24FD3 /* Sine.m */,
+				44FC389018A4242C00DB233A /* Elastic.h */,
+				44FC389118A4242C00DB233A /* Elastic.m */,
+				44FC389518A4251A00DB233A /* Bounce.h */,
+				44FC389618A4251A00DB233A /* Bounce.m */,
+				44FC389A18A428C900DB233A /* Expo.h */,
+				44FC389B18A428C900DB233A /* Expo.m */,
+			);
+			path = easings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		44FC384318A3FD2B00DB233A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44FC384418A3FD3200DB233A /* Linear.h in Headers */,
+				44FC384518A3FD3200DB233A /* Sine.h in Headers */,
+				44FC389C18A428C900DB233A /* Expo.h in Headers */,
+				44FC389718A4251A00DB233A /* Bounce.h in Headers */,
+				44FC388D18A4113D00DB233A /* GSTweenData.h in Headers */,
+				44FC389218A4242C00DB233A /* Elastic.h in Headers */,
+				44FC384618A3FD3200DB233A /* GSTween.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		44C1AEEF18A3A70600E24FD3 /* GSTween */ = {
@@ -153,6 +235,7 @@
 				44C1AEEC18A3A70600E24FD3 /* Sources */,
 				44C1AEED18A3A70600E24FD3 /* Frameworks */,
 				44C1AEEE18A3A70600E24FD3 /* CopyFiles */,
+				44FC384318A3FD2B00DB233A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -224,7 +307,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C1AF1C18A3A74500E24FD3 /* Linear.m in Sources */,
 				44C1AEFB18A3A70600E24FD3 /* GSTween.m in Sources */,
+				44C1AF1F18A3A80100E24FD3 /* Sine.m in Sources */,
+				44FC389818A4251A00DB233A /* Bounce.m in Sources */,
+				44FC389318A4242C00DB233A /* Elastic.m in Sources */,
+				44FC389D18A428C900DB233A /* Expo.m in Sources */,
+				44FC388E18A4113D00DB233A /* GSTweenData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +498,7 @@
 				44C1AF1518A3A70600E24FD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44C1AF1618A3A70600E24FD3 /* Build configuration list for PBXNativeTarget "GSTweenTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +507,7 @@
 				44C1AF1818A3A70600E24FD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
