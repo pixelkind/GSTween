@@ -25,5 +25,6 @@ typedef CGFloat (^easeBlock)(CGFloat time);
 }
 
 - (id)initWithTarget:(NSObject*)target andTime:(CGFloat)time andEase:(easeBlock)ease andTo:(NSDictionary*)to;
+- (id)initWithTarget:(NSObject*)target andTime:(CGFloat)time andEase:(easeBlock)ease andTo:(NSDictionary*)to andDelay:(CGFloat)delay;
 
 @end

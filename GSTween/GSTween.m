@@ -12,14 +12,19 @@
 
 - (id)initWithTarget:(NSObject*)target andTime:(CGFloat)time andEase:(easeBlock)ease andTo:(NSDictionary*)to
 {
+    return [self initWithTarget:target andTime:time andEase:ease andTo:to andDelay:0.0f];
+}
+
+- (id)initWithTarget:(NSObject*)target andTime:(CGFloat)time andEase:(easeBlock)ease andTo:(NSDictionary*)to andDelay:(CGFloat)delay
+{
     self = [super init];
     if (self)
     {
         _time = time;
         _target = target;
         _currentTime = 0.0f;
-        _delay = 0.0f;
-        _totalTime = _time;
+        _delay = delay;
+        _totalTime = _time + _delay;
         _ease = ease;
         _values = [NSMutableArray array];
         
@@ -45,7 +50,7 @@
 
 - (void)update:(CADisplayLink*)displayLink
 {
-    if (1 == 1 || (_currentTime >= _delay && _currentTime <= _totalTime))
+    if (_currentTime >= _delay)// && _currentTime <= _totalTime))
     {
         CGFloat value;
         CGFloat time = (_currentTime - _delay) / _time;
