@@ -20,7 +20,10 @@ static CGFloat _sValue = 0.3f / 4.0f;
             return 0;
         if (time >= 1)
             return 1;
-        
+        /*
+         float postFix =a*pow(2,10*(t-=1)); // this is a fix, again, with post-increment operators
+         return -(postFix * sin((t*d-s)*(2*PI)/p )) + b;
+        */
         return -(pow(2, 10 * (time -= 1)) * sin((time - _sValue)*(2 * M_PI) / _pValue));
     };
 }

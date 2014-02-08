@@ -10,12 +10,12 @@
 
 @implementation GSTween
 
-- (id)initWithTarget:(NSObject*)target andTime:(CGFloat)time andEase:(easeBlock)ease andTo:(NSDictionary*)to
+- (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease to:(NSDictionary*)to
 {
-    return [self initWithTarget:target andTime:time andEase:ease andTo:to andDelay:0.0f];
+    return [self initWithTarget:target time:time ease:ease to:to delay:0.0f];
 }
 
-- (id)initWithTarget:(NSObject*)target andTime:(CGFloat)time andEase:(easeBlock)ease andTo:(NSDictionary*)to andDelay:(CGFloat)delay
+- (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease to:(NSDictionary*)to delay:(CGFloat)delay
 {
     self = [super init];
     if (self)

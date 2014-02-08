@@ -24,7 +24,7 @@ typedef CGFloat (^easeBlock)(CGFloat time);
     CADisplayLink* _displayLink;
 }
 
-- (id)initWithTarget:(NSObject*)target andTime:(CGFloat)time andEase:(easeBlock)ease andTo:(NSDictionary*)to;
-- (id)initWithTarget:(NSObject*)target andTime:(CGFloat)time andEase:(easeBlock)ease andTo:(NSDictionary*)to andDelay:(CGFloat)delay;
+- (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease to:(NSDictionary*)to;
+- (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease to:(NSDictionary*)to delay:(CGFloat)delay;
 
 @end
