@@ -10,12 +10,7 @@
 
 @implementation GSTween
 
-- (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease to:(NSDictionary*)to
-{
-    return [self initWithTarget:target time:time ease:ease to:to delay:0.0f];
-}
-
-- (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease to:(NSDictionary*)to delay:(CGFloat)delay
+- (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease params:(NSDictionary*)params
 {
     self = [super init];
     if (self)
@@ -23,25 +18,16 @@
         _time = time;
         _target = target;
         _currentTime = 0.0f;
-        _delay = delay;
-        _totalTime = _time + _delay;
+        _delay = 0.0f;
+        _totalTime = _time;
         _ease = ease;
         _values = [NSMutableArray array];
         _isYoyo = NO;
         _speed = 1.0f;
+        _repeat = 0;
+        _repeatCount = 0;
         
-        [self parseKeys:to];
-        /*
-        [to enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-        {
-            GSTweenData* tweenData = [GSTweenData tweenDataWithValue:obj andKey:key andTarget:target];
-            if (tweenData != nil)
-            {
-                [_values addObject:tweenData];
-            }
-        }];
-        */
-        
+        [self parseKeys:params];
         [self start];
     }
     return self;
@@ -49,7 +35,7 @@
 
 - (void)parseKeys:(NSDictionary*)keys
 {
-    NSArray* reserved = @[ @"yoyo", @"speed" ];
+    NSArray* reserved = @[ @"yoyo", @"speed", @"delay", @"repeat" ];
     
     [keys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
     {
@@ -64,8 +50,16 @@
         }
         else
         {
-            NSLog(@"Index found");
-            if ([key isEqualToString:@"yoyo"])
+            if ([key isEqualToString:@"delay"])
+            {
+                _delay = [obj floatValue];
+                _totalTime = _time + _delay;
+            }
+            else if ([key isEqualToString:@"repeat"])
+            {
+                _repeat = [obj integerValue];
+            }
+            else if ([key isEqualToString:@"yoyo"])
             {
                 _isYoyo = [obj boolValue];
             }
@@ -102,20 +96,38 @@
             [(GSTweenData*)obj updateWithValue:value];
         }];
         
-        if (value == 1.0f && !_isYoyo)
+        if (value == 1.0f)
         {
-            [self stop];
-            //stop this...
+            if (!_isYoyo)
+            {
+                if (_repeat == 0 || _repeatCount == _repeat)
+                {
+                    [self stop];
+                }
+                else
+                {
+                    _currentTime = 0.0f;
+                    _repeatCount++;
+                }
+            }
+            else
+            {
+                _currentTime = _totalTime;
+                _speed *= - 1.0f;
+            }
         }
-        else if (value == 1.0f)
+        else if (value == 0.0f && _speed < 0)
         {
-            _currentTime = _totalTime;
-            _speed *= - 1.0f;
-        }
-        else if (_isYoyo && _speed < 0 && value == 0.0f)
-        {
-            _currentTime = 0.0f;
-            _speed *= - 1.0f;
+            if (_repeat == 0 || _repeatCount == _repeat)
+            {
+                [self stop];
+            }
+            else
+            {
+                _currentTime = 0.0f;
+                _speed *= - 1.0f;
+                _repeatCount++;
+            }
         }
     }
     _currentTime += [displayLink duration] * _speed;
