@@ -88,15 +88,12 @@
         
         value = _ease(time);
         
-        //make this nicer!
-        value = fminf(1.0f, fmaxf(0.0f, value));
-        
         [_values enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
         {
             [(GSTweenData*)obj updateWithValue:value];
         }];
         
-        if (value == 1.0f)
+        if (time == 1.0f)
         {
             if (!_isYoyo)
             {
@@ -116,7 +113,7 @@
                 _speed *= - 1.0f;
             }
         }
-        else if (value == 0.0f && _speed < 0)
+        else if (time == 0.0f && _speed < 0)
         {
             if (_repeat == 0 || _repeatCount == _repeat)
             {
