@@ -16,7 +16,7 @@
     NSInvocation* _setter;
 }
 
-+ (id)tweenDataWithValue:(NSObject*)value andKey:(NSString*)key andTarget:(NSObject*)target;
++ (id)tweenDataWithValue:(NSObject*)value key:(NSString*)key target:(NSObject*)target;
 - (void)setup;
 - (void)updateWithValue:(CGFloat)value;
 
@@ -31,7 +31,7 @@
 }
 
 
-- (id)initWithValue:(NSObject*)value andGetter:(NSInvocation*)getter andSetter:(NSInvocation*)setter;
+- (id)initWithValue:(NSObject*)value getter:(NSInvocation*)getter setter:(NSInvocation*)setter;
 
 @end
 
@@ -42,7 +42,7 @@
     CGRect _change;
 }
 
-- (id)initWithValue:(NSObject*)value andGetter:(NSInvocation*)getter andSetter:(NSInvocation*)setter;
+- (id)initWithValue:(NSObject*)value getter:(NSInvocation*)getter setter:(NSInvocation*)setter;
 
 @end
 
@@ -54,6 +54,6 @@
     NSInteger _change;
 }
 
-- (id)initWithValue:(NSObject*)value andGetter:(NSInvocation*)getter andSetter:(NSInvocation*)setter;
+- (id)initWithValue:(NSObject*)value getter:(NSInvocation*)getter setter:(NSInvocation*)setter;
 
 @end

@@ -42,7 +42,7 @@
         NSInteger index = [reserved indexOfObject:key];
         if (index == NSNotFound)
         {
-            GSTweenData* tweenData = [GSTweenData tweenDataWithValue:obj andKey:key andTarget:_target];
+            GSTweenData* tweenData = [GSTweenData tweenDataWithValue:obj key:key target:_target];
             if (tweenData != nil)
             {
                 [_values addObject:tweenData];

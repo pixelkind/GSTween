@@ -105,6 +105,7 @@
 		4464251B18AD5AEC008F04EB /* Quartic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quartic.m; sourceTree = "<group>"; };
 		4464251F18AD5BB5008F04EB /* Quintic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quintic.h; sourceTree = "<group>"; };
 		4464252018AD5BB5008F04EB /* Quintic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quintic.m; sourceTree = "<group>"; };
+		4464252418AD64F9008F04EB /* LICENSE_EASINGS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_EASINGS.txt; sourceTree = "<group>"; };
 		44C1AEF018A3A70600E24FD3 /* libGSTween.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGSTween.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C1AEF318A3A70600E24FD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		44C1AEF718A3A70600E24FD3 /* GSTween-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSTween-Prefix.pch"; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 				4464251B18AD5AEC008F04EB /* Quartic.m */,
 				4464251F18AD5BB5008F04EB /* Quintic.h */,
 				4464252018AD5BB5008F04EB /* Quintic.m */,
+				4464252418AD64F9008F04EB /* LICENSE_EASINGS.txt */,
 			);
 			path = easings;
 			sourceTree = "<group>";
