@@ -11,6 +11,8 @@
 #import "GSTweenData.h"
 
 typedef CGFloat (^easeBlock)(CGFloat time);
+typedef void (^updateTweenBlock)(CGFloat progress, CGFloat value);
+typedef void (^tweenBlock)();
 
 @interface GSTween : NSObject
 {
@@ -23,10 +25,15 @@ typedef CGFloat (^easeBlock)(CGFloat time);
     CGFloat _delay;
     CADisplayLink* _displayLink;
     BOOL _isYoyo;
-    CGFloat _speed;
     NSInteger _repeat;
     NSInteger _repeatCount;
+    updateTweenBlock _updateBlock;
+    tweenBlock _startBlock;
+    tweenBlock _completeBlock;
+    BOOL _init;
 }
+
+@property (nonatomic) CGFloat speed;
 
 - (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease params:(NSDictionary*)params;
 

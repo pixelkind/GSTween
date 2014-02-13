@@ -26,6 +26,7 @@
         _speed = 1.0f;
         _repeat = 0;
         _repeatCount = 0;
+        _init = NO;
         
         [self parseKeys:params];
         [self start];
@@ -35,7 +36,7 @@
 
 - (void)parseKeys:(NSDictionary*)keys
 {
-    NSArray* reserved = @[ @"yoyo", @"speed", @"delay", @"repeat" ];
+    NSArray* reserved = @[ @"yoyo", @"speed", @"delay", @"repeat", @"onStart", @"onComplete", @"onUpdate" ];
     
     [keys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
     {
@@ -67,6 +68,18 @@
             {
                 _speed = [obj floatValue];
             }
+            else if ([key isEqualToString:@"onUpdate"])
+            {
+                _updateBlock = obj;
+            }
+            else if ([key isEqualToString:@"onComplete"])
+            {
+                _completeBlock = obj;
+            }
+            else if ([key isEqualToString:@"onStart"])
+            {
+                _startBlock = obj;
+            }
         }
     }];
 }
@@ -92,6 +105,16 @@
         {
             [(GSTweenData*)obj updateWithValue:value];
         }];
+        
+        if (_startBlock && !_init)
+        {
+            _startBlock();
+            _init = YES;
+        }
+        if (_updateBlock)
+        {
+            _updateBlock(time, value);
+        }
         
         if (time == 1.0f)
         {
@@ -137,7 +160,26 @@
 
 - (void)stop
 {
+    if (_completeBlock)
+    {
+        _completeBlock();
+    }
     [_displayLink invalidate];
+}
+
+- (void)pause
+{
+    
+}
+
+- (void)resume
+{
+    
+}
+
+- (void)reset
+{
+    
 }
 
 @end

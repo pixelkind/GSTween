@@ -162,11 +162,11 @@
 		44C1AEE718A3A70600E24FD3 = {
 			isa = PBXGroup;
 			children = (
-				4464252518AD6581008F04EB /* LICENSE.txt */,
 				44C1AEF518A3A70600E24FD3 /* GSTween */,
 				44C1AF0918A3A70600E24FD3 /* GSTweenTests */,
 				44C1AEF218A3A70600E24FD3 /* Frameworks */,
 				44C1AEF118A3A70600E24FD3 /* Products */,
+				4464252518AD6581008F04EB /* LICENSE.txt */,
 			);
 			sourceTree = "<group>";
 		};
