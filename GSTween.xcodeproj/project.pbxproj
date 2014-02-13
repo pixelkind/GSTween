@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4464250818AD541E008F04EB /* Back.h in Headers */ = {isa = PBXBuildFile; fileRef = 4464250618AD541E008F04EB /* Back.h */; };
+		4464250918AD541E008F04EB /* Back.m in Sources */ = {isa = PBXBuildFile; fileRef = 4464250718AD541E008F04EB /* Back.m */; };
+		4464250A18AD55D4008F04EB /* Back.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4464250618AD541E008F04EB /* Back.h */; };
+		4464250D18AD57D1008F04EB /* Circular.h in Headers */ = {isa = PBXBuildFile; fileRef = 4464250B18AD57D1008F04EB /* Circular.h */; };
+		4464250E18AD57D1008F04EB /* Circular.m in Sources */ = {isa = PBXBuildFile; fileRef = 4464250C18AD57D1008F04EB /* Circular.m */; };
+		4464250F18AD57D7008F04EB /* Circular.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4464250B18AD57D1008F04EB /* Circular.h */; };
+		4464251218AD58DE008F04EB /* Cubic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4464251018AD58DE008F04EB /* Cubic.h */; };
+		4464251318AD58DE008F04EB /* Cubic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4464251118AD58DE008F04EB /* Cubic.m */; };
+		4464251418AD595F008F04EB /* Cubic.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4464251018AD58DE008F04EB /* Cubic.h */; };
+		4464251718AD5A22008F04EB /* Quadratic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4464251518AD5A22008F04EB /* Quadratic.h */; };
+		4464251818AD5A22008F04EB /* Quadratic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4464251618AD5A22008F04EB /* Quadratic.m */; };
+		4464251918AD5A27008F04EB /* Quadratic.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4464251518AD5A22008F04EB /* Quadratic.h */; };
+		4464251C18AD5AEC008F04EB /* Quartic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4464251A18AD5AEC008F04EB /* Quartic.h */; };
+		4464251D18AD5AEC008F04EB /* Quartic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4464251B18AD5AEC008F04EB /* Quartic.m */; };
+		4464251E18AD5B65008F04EB /* Quartic.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4464251A18AD5AEC008F04EB /* Quartic.h */; };
+		4464252118AD5BB5008F04EB /* Quintic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4464251F18AD5BB5008F04EB /* Quintic.h */; };
+		4464252218AD5BB5008F04EB /* Quintic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4464252018AD5BB5008F04EB /* Quintic.m */; };
+		4464252318AD5C26008F04EB /* Quintic.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4464251F18AD5BB5008F04EB /* Quintic.h */; };
 		44C1AEF418A3A70600E24FD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C1AEF318A3A70600E24FD3 /* Foundation.framework */; };
 		44C1AEF918A3A70600E24FD3 /* GSTween.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44C1AEF818A3A70600E24FD3 /* GSTween.h */; };
 		44C1AEFB18A3A70600E24FD3 /* GSTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C1AEFA18A3A70600E24FD3 /* GSTween.m */; };
@@ -56,6 +74,12 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				4464252318AD5C26008F04EB /* Quintic.h in CopyFiles */,
+				4464251E18AD5B65008F04EB /* Quartic.h in CopyFiles */,
+				4464251918AD5A27008F04EB /* Quadratic.h in CopyFiles */,
+				4464251418AD595F008F04EB /* Cubic.h in CopyFiles */,
+				4464250F18AD57D7008F04EB /* Circular.h in CopyFiles */,
+				4464250A18AD55D4008F04EB /* Back.h in CopyFiles */,
 				44FC389E18A4293000DB233A /* Expo.h in CopyFiles */,
 				44FC389918A4258400DB233A /* Bounce.h in CopyFiles */,
 				44FC389418A4249B00DB233A /* Elastic.h in CopyFiles */,
@@ -69,6 +93,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4464250618AD541E008F04EB /* Back.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Back.h; sourceTree = "<group>"; };
+		4464250718AD541E008F04EB /* Back.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Back.m; sourceTree = "<group>"; };
+		4464250B18AD57D1008F04EB /* Circular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circular.h; sourceTree = "<group>"; };
+		4464250C18AD57D1008F04EB /* Circular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circular.m; sourceTree = "<group>"; };
+		4464251018AD58DE008F04EB /* Cubic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cubic.h; sourceTree = "<group>"; };
+		4464251118AD58DE008F04EB /* Cubic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cubic.m; sourceTree = "<group>"; };
+		4464251518AD5A22008F04EB /* Quadratic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadratic.h; sourceTree = "<group>"; };
+		4464251618AD5A22008F04EB /* Quadratic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quadratic.m; sourceTree = "<group>"; };
+		4464251A18AD5AEC008F04EB /* Quartic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quartic.h; sourceTree = "<group>"; };
+		4464251B18AD5AEC008F04EB /* Quartic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quartic.m; sourceTree = "<group>"; };
+		4464251F18AD5BB5008F04EB /* Quintic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quintic.h; sourceTree = "<group>"; };
+		4464252018AD5BB5008F04EB /* Quintic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quintic.m; sourceTree = "<group>"; };
 		44C1AEF018A3A70600E24FD3 /* libGSTween.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGSTween.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C1AEF318A3A70600E24FD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		44C1AEF718A3A70600E24FD3 /* GSTween-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSTween-Prefix.pch"; sourceTree = "<group>"; };
@@ -204,6 +240,18 @@
 				44FC389618A4251A00DB233A /* Bounce.m */,
 				44FC389A18A428C900DB233A /* Expo.h */,
 				44FC389B18A428C900DB233A /* Expo.m */,
+				4464250618AD541E008F04EB /* Back.h */,
+				4464250718AD541E008F04EB /* Back.m */,
+				4464250B18AD57D1008F04EB /* Circular.h */,
+				4464250C18AD57D1008F04EB /* Circular.m */,
+				4464251018AD58DE008F04EB /* Cubic.h */,
+				4464251118AD58DE008F04EB /* Cubic.m */,
+				4464251518AD5A22008F04EB /* Quadratic.h */,
+				4464251618AD5A22008F04EB /* Quadratic.m */,
+				4464251A18AD5AEC008F04EB /* Quartic.h */,
+				4464251B18AD5AEC008F04EB /* Quartic.m */,
+				4464251F18AD5BB5008F04EB /* Quintic.h */,
+				4464252018AD5BB5008F04EB /* Quintic.m */,
 			);
 			path = easings;
 			sourceTree = "<group>";
@@ -215,11 +263,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4464251C18AD5AEC008F04EB /* Quartic.h in Headers */,
 				44FC384418A3FD3200DB233A /* Linear.h in Headers */,
 				44FC384518A3FD3200DB233A /* Sine.h in Headers */,
 				44FC389C18A428C900DB233A /* Expo.h in Headers */,
+				4464251218AD58DE008F04EB /* Cubic.h in Headers */,
 				44FC389718A4251A00DB233A /* Bounce.h in Headers */,
 				44FC388D18A4113D00DB233A /* GSTweenData.h in Headers */,
+				4464252118AD5BB5008F04EB /* Quintic.h in Headers */,
+				4464250D18AD57D1008F04EB /* Circular.h in Headers */,
+				4464250818AD541E008F04EB /* Back.h in Headers */,
+				4464251718AD5A22008F04EB /* Quadratic.h in Headers */,
 				44FC389218A4242C00DB233A /* Elastic.h in Headers */,
 				44FC384618A3FD3200DB233A /* GSTween.h in Headers */,
 			);
@@ -307,12 +361,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4464250E18AD57D1008F04EB /* Circular.m in Sources */,
+				4464251818AD5A22008F04EB /* Quadratic.m in Sources */,
 				44C1AF1C18A3A74500E24FD3 /* Linear.m in Sources */,
 				44C1AEFB18A3A70600E24FD3 /* GSTween.m in Sources */,
+				4464250918AD541E008F04EB /* Back.m in Sources */,
 				44C1AF1F18A3A80100E24FD3 /* Sine.m in Sources */,
 				44FC389818A4251A00DB233A /* Bounce.m in Sources */,
 				44FC389318A4242C00DB233A /* Elastic.m in Sources */,
 				44FC389D18A428C900DB233A /* Expo.m in Sources */,
+				4464251D18AD5AEC008F04EB /* Quartic.m in Sources */,
+				4464251318AD58DE008F04EB /* Cubic.m in Sources */,
+				4464252218AD5BB5008F04EB /* Quintic.m in Sources */,
 				44FC388E18A4113D00DB233A /* GSTweenData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

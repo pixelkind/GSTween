@@ -13,7 +13,7 @@
 + (easeBlock)easeIn
 {
     return ^CGFloat(CGFloat time) {
-        return 1 - cos(time * M_PI_2);
+        return 1.0f - cos(time * M_PI_2);
     };
 }
 
@@ -27,7 +27,7 @@
 + (easeBlock)easeInOut
 {
     return ^CGFloat(CGFloat time) {
-        return - 0.5 * (cos(M_PI * time) - 1);
+        return - 0.5f * (cos(M_PI * time) - 1.0f);
     };
 }
 
