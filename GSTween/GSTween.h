@@ -14,6 +14,15 @@ typedef CGFloat (^easeBlock)(CGFloat time);
 typedef void (^updateTweenBlock)(CGFloat progress, CGFloat value);
 typedef void (^tweenBlock)();
 
+extern NSString *const kGSTweenDelay;
+extern NSString *const kGSTweenYoYo;
+extern NSString *const kGSTweenAutoStart;
+extern NSString *const kGSTweenRepeat;
+extern NSString *const kGSTweenOnStart;
+extern NSString *const kGSTweenOnComplete;
+extern NSString *const kGSTweenOnUpdate;
+extern NSString *const kGSTweenSpeed;
+
 @interface GSTween : NSObject
 {
     NSObject* _target;

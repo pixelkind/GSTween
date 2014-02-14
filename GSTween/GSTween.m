@@ -8,6 +8,15 @@
 
 #import "GSTween.h"
 
+NSString *const kGSTweenDelay = @"delay";
+NSString *const kGSTweenYoYo = @"yoyo";
+NSString *const kGSTweenAutoStart = @"autoStart";
+NSString *const kGSTweenRepeat = @"repeat";
+NSString *const kGSTweenOnStart = @"onStart";
+NSString *const kGSTweenOnComplete = @"onComplete";
+NSString *const kGSTweenOnUpdate = @"onUpdate";
+NSString *const kGSTweenSpeed = @"speed";
+
 @implementation GSTween
 
 - (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease params:(NSDictionary*)params
