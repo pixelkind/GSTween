@@ -26,17 +26,22 @@
         _speed = 1.0f;
         _repeat = 0;
         _repeatCount = 0;
+        _autoStart = YES;
         _init = NO;
         
         [self parseKeys:params];
-        [self start];
+        
+        if (_autoStart)
+        {
+            [self start];
+        }
     }
     return self;
 }
 
 - (void)parseKeys:(NSDictionary*)keys
 {
-    NSArray* reserved = @[ @"yoyo", @"speed", @"delay", @"repeat", @"onStart", @"onComplete", @"onUpdate" ];
+    NSArray* reserved = @[ @"yoyo", @"speed", @"delay", @"repeat", @"onStart", @"onComplete", @"onUpdate", @"autoStart" ];
     
     [keys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
     {
@@ -79,6 +84,10 @@
             else if ([key isEqualToString:@"onStart"])
             {
                 _startBlock = obj;
+            }
+            else if ([key isEqualToString:@"autoStart"])
+            {
+                _autoStart = [obj boolValue];
             }
         }
     }];

@@ -30,11 +30,17 @@ typedef void (^tweenBlock)();
     updateTweenBlock _updateBlock;
     tweenBlock _startBlock;
     tweenBlock _completeBlock;
+    BOOL _autoStart;
     BOOL _init;
 }
 
 @property (nonatomic) CGFloat speed;
 
 - (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease params:(NSDictionary*)params;
+- (void)start;
+- (void)stop;
+- (void)pause;
+- (void)resume;
+- (void)reset;
 
 @end
