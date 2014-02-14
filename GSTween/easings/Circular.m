@@ -13,7 +13,7 @@
 + (easeBlock)easeIn
 {
     return ^CGFloat(CGFloat time) {
-        return -(sqrt(1 - time * time) - 1.0f);
+        return -(sqrt(1.0f - time * time) - 1.0f);
     };
 }
 
@@ -21,7 +21,7 @@
 {
     return ^CGFloat(CGFloat time) {
         time -= 1.0f;
-        return sqrt(1 - time * time);
+        return sqrt(1.0f - time * time);
     };
 }
 
@@ -29,11 +29,11 @@
 {
     return ^CGFloat(CGFloat time) {
         time *= 2.0f;
-        if (time < 1)
-            return - 0.5f * (sqrt(1 - time * time) - 1);
+        if (time < 1.0f)
+            return - 0.5f * (sqrt(1.0f - time * time) - 1.0f);
         
         time -= 2.0f;
-        return 0.5f * (sqrt(1 - time * time) + 1.0f);
+        return 0.5f * (sqrt(1.0f - time * time) + 1.0f);
     };
 }
 

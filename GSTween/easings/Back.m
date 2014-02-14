@@ -15,7 +15,7 @@ static CGFloat _sValue = 1.70158f;
 + (easeBlock)easeIn
 {
     return ^CGFloat(CGFloat time) {
-        return time * time * ((_sValue + 1) * time - _sValue);
+        return time * time * ((_sValue + 1.0f) * time - _sValue);
     };
 }
 
@@ -23,7 +23,7 @@ static CGFloat _sValue = 1.70158f;
 {
     return ^CGFloat(CGFloat time) {
         time -= 1.0f;
-        return time * time * ((_sValue + 1) * time + _sValue) + 1;
+        return time * time * ((_sValue + 1.0f) * time + _sValue) + 1.0f;
     };
 }
 
@@ -32,11 +32,11 @@ static CGFloat _sValue = 1.70158f;
     return ^CGFloat(CGFloat time) {
         time *= 2.0f;
         CGFloat s = _sValue * 1.525f;
-        if (time < 1)
-            return 0.5f * (time * time * ((s + 1) * time - s));
+        if (time < 1.0f)
+            return 0.5f * (time * time * ((s + 1.0f) * time - s));
         
         time -= 2.0f;
-        return 0.5f * (time * time * ((s + 1) * time + s) + 2);
+        return 0.5f * (time * time * ((s + 1.0f) * time + s) + 2.0f);
     };
 }
 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GSTween.h"
+
+typedef CGFloat (^easeBlock)(CGFloat time);
 
 @interface Quintic : NSObject
 

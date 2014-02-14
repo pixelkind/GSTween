@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "GSTweenData.h"
 
 typedef CGFloat (^easeBlock)(CGFloat time);
 typedef void (^updateTweenBlock)(CGFloat progress, CGFloat value);
@@ -41,6 +40,7 @@ extern NSString *const kGSTweenSpeed;
     tweenBlock _completeBlock;
     BOOL _autoStart;
     BOOL _init;
+    BOOL _isPaused;
 }
 
 @property (nonatomic) CGFloat speed;

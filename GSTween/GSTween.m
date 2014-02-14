@@ -7,6 +7,7 @@
 //
 
 #import "GSTween.h"
+#import "GSTweenData.h"
 
 NSString *const kGSTweenDelay = @"delay";
 NSString *const kGSTweenYoYo = @"yoyo";
@@ -37,6 +38,7 @@ NSString *const kGSTweenSpeed = @"speed";
         _repeatCount = 0;
         _autoStart = YES;
         _init = NO;
+        _isPaused = NO;
         
         [self parseKeys:params];
         
@@ -183,16 +185,24 @@ NSString *const kGSTweenSpeed = @"speed";
         _completeBlock();
     }
     [_displayLink invalidate];
+    [self reset];
 }
 
 - (void)pause
 {
-    
+    if (!_isPaused)
+    {
+        [_displayLink invalidate];
+        _isPaused = YES;
+    }
 }
 
 - (void)resume
 {
-    
+    if (_isPaused)
+    {
+        [self setupDisplayLink];
+    }
 }
 
 - (void)reset

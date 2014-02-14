@@ -20,16 +20,16 @@
 + (easeBlock)easeOut
 {
     return ^CGFloat(CGFloat time) {
-        if (time < 1.0 / 2.75)
+        if (time < 1.0f / 2.75f)
         {
             return (7.5625f * time * time);
         }
-        else if (time < 2.0 / 2.75)
+        else if (time < 2.0f / 2.75f)
         {
             CGFloat postfix = (time -= (1.5f / 2.75f));
             return 7.5625f * postfix * time + 0.75f;
         }
-        else if (time < 2.5 / 2.75)
+        else if (time < 2.5f / 2.75f)
         {
             CGFloat postfix = (time -= (2.25f / 2.75f));
             return 7.5625f * postfix * time + 0.9375f;

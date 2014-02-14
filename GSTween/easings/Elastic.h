@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GSTween.h"
+
+typedef CGFloat (^easeBlock)(CGFloat time);
 
 @interface Elastic : NSObject
 
@@ -17,5 +18,8 @@
 
 + (CGFloat)pValue;
 + (void)setPValue:(CGFloat)pValue;
+
++ (CGFloat)aValue;
++ (void)setAValue:(CGFloat)aValue;
 
 @end
