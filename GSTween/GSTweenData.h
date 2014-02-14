@@ -57,3 +57,27 @@
 - (id)initWithValue:(NSObject*)value getter:(NSInvocation*)getter setter:(NSInvocation*)setter;
 
 @end
+
+
+@interface GSTweenDataPoint : GSTweenData
+{
+    CGPoint _from;
+    CGPoint _to;
+    CGPoint _change;
+}
+
+- (id)initWithValue:(NSObject*)value getter:(NSInvocation*)getter setter:(NSInvocation*)setter;
+
+@end
+
+
+@interface GSTweenDataSize : GSTweenData
+{
+    CGSize _from;
+    CGSize _to;
+    CGSize _change;
+}
+
+- (id)initWithValue:(NSObject*)value getter:(NSInvocation*)getter setter:(NSInvocation*)setter;
+
+@end

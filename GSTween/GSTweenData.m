@@ -12,11 +12,55 @@
 
 + (id)tweenDataWithValue:(NSObject*)value key:(NSString*)key target:(NSObject*)target
 {
-    const char* type;
+    NSArray* reserved = @[ @"x", @"y", @"width", @"height", @"frameOrigin", @"frameSize" ];
+    const char* type = "";
     SEL getter = NSSelectorFromString(key);
     SEL setter = NSSelectorFromString([NSString stringWithFormat:@"set%@:", [[[key substringToIndex:1] uppercaseString] stringByAppendingString:[key substringFromIndex:1]]]);
     NSInvocation* getterInvocation;
     NSInvocation* setterInvocation;
+    
+    
+    if ((![target respondsToSelector:getter] || ![target respondsToSelector:setter]) && [reserved indexOfObject:key] != NSNotFound)
+    {
+        if ([key isEqualToString:@"frameOrigin"])
+        {
+            key = @"frame";
+            CGRect frame = [(id)target frame];
+            value = [NSString stringWithFormat:@"{%@,{%f,%f}}", value, frame.size.width, frame.size.height];
+        }
+        else if ([key isEqualToString:@"x"])
+        {
+            key = @"frame";
+            CGRect frame = [(id)target frame];
+            value = [NSString stringWithFormat:@"{{%f,%f},{%f,%f}}", [(NSNumber*)value floatValue], frame.origin.y, frame.size.width, frame.size.height];
+        }
+        else if ([key isEqualToString:@"y"])
+        {
+            key = @"frame";
+            CGRect frame = [(id)target frame];
+            value = [NSString stringWithFormat:@"{{%f,%f},{%f,%f}}", frame.origin.x, [(NSNumber*)value floatValue], frame.size.width, frame.size.height];
+        }
+        else if ([key isEqualToString:@"width"])
+        {
+            key = @"frame";
+            CGRect frame = [(id)target frame];
+            value = [NSString stringWithFormat:@"{{%f,%f},{%f,%f}}", frame.origin.x, frame.origin.y, [(NSNumber*)value floatValue], frame.size.height];
+        }
+        else if ([key isEqualToString:@"height"])
+        {
+            key = @"frame";
+            CGRect frame = [(id)target frame];
+            value = [NSString stringWithFormat:@"{{%f,%f},{%f,%f}}", frame.origin.x, frame.origin.y, frame.size.width, [(NSNumber*)value floatValue]];
+        }
+        else if ([key isEqualToString:@"frameSize"])
+        {
+            key = @"frame";
+            CGRect frame = [(id)target frame];
+            value = [NSString stringWithFormat:@"{{%f,%f},%@}", frame.origin.x, frame.origin.y, value];
+        }
+        getter = NSSelectorFromString(key);
+        setter = NSSelectorFromString([NSString stringWithFormat:@"set%@:", [[[key substringToIndex:1] uppercaseString] stringByAppendingString:[key substringFromIndex:1]]]);
+    }
     
     if ([target respondsToSelector:getter] && [target respondsToSelector:setter])
     {
@@ -34,38 +78,6 @@
         
         type = [[getterInvocation methodSignature] methodReturnType];
     }
-    else
-    {
-        //x, y, position, width, height, size, scale, backgroundColor
-        if ([key isEqualToString:@"frameOrigin"])
-        {
-            type = "{CGPoint=ff}";
-        }
-        else if ([key isEqualToString:@"x"])
-        {
-            type = "f";
-        }
-        else if ([key isEqualToString:@"y"])
-        {
-            type = "f";
-        }
-        else if ([key isEqualToString:@"width"])
-        {
-            type = "f";
-        }
-        else if ([key isEqualToString:@"height"])
-        {
-            type = "f";
-        }
-        else if ([key isEqualToString:@"frameSize"])
-        {
-            type = "{CGSize=ff}";
-        }
-        else
-        {
-            type = "f";
-        }
-    }
     
     NSLog(@"TYPE: %s", type);
     if (strcmp(type, "d") == 0 || strcmp(type, "f") == 0)
@@ -79,11 +91,11 @@
     }
     else if (strcmp(type, "{CGPoint=dd}") == 0 || strcmp(type, "{CGPoint=dd}") == 0)
     {
-        
+        return [[GSTweenDataPoint alloc] initWithValue:value getter:getterInvocation setter:setterInvocation];
     }
     else if (strcmp(type, "{CGSize=dd}") == 0 || strcmp(type, "{CGSize=dd}") == 0)
     {
-        
+        return [[GSTweenDataSize alloc] initWithValue:value getter:getterInvocation setter:setterInvocation];
     }
     else if (strcmp(type, "i") == 0 || strcmp(type, "q") == 0)
     {
@@ -112,64 +124,6 @@
 {
     
 }
-
-/*
-
-- (void)setType:(const char*)type
-{
-    //hier festlegen welcher return type vorliegt:
-    //float, CGRect, CGSize, CGPoint, UIColor, int
- 
-    else if (strcmp(type, "{CGPoint=ff}") == 0)
-    {
-        _type = PTweenDataTypePoint;
-        
-        CGPoint toPoint = CGPointFromString(_stringValue);
-        _to = [NSValue valueWithCGPoint:toPoint];
-        
-        CGPoint fromPoint;
-        [_getter invoke];
-        [_getter getReturnValue:&fromPoint];
-        _from = [NSValue valueWithCGPoint:fromPoint];
-        
-        CGPoint changePoint = CGPointMake(toPoint.x - fromPoint.x, toPoint.y - fromPoint.y);
-        _change = [NSValue valueWithCGPoint:changePoint];
-    }
-    else if (strcmp(type, "{CGSize=ff}") == 0)
-    {
-        _type = PTweenDataTypeSize;
-        
-        CGSize toSize = CGSizeFromString(_stringValue);
-        _to = [NSValue valueWithCGSize:toSize];
-        
-        CGSize fromSize;
-        [_getter invoke];
-        [_getter getReturnValue:&fromSize];
-        _from = [NSValue valueWithCGSize:fromSize];
-        
-        CGSize changeSize = CGSizeMake(toSize.width - fromSize.width, toSize.height - fromSize.height);
-        _change = [NSValue valueWithCGSize:changeSize];
-    }
- 
-- (void)updateFloatValue
-{
-        case PTweenDataTypePoint:
-        {
-            CGPoint fromPoint = [_from CGPointValue];
-            CGPoint changePoint = [_change CGPointValue];
-            CGPoint pointValue = CGPointMake(fromPoint.x + changePoint.x * _value, fromPoint.y + changePoint.y * _value);
-            [_setter setArgument:&pointValue atIndex:2];
-            break;
-        }
-        case PTweenDataTypeSize:
-        {
-            CGSize fromSize = [_from CGSizeValue];
-            CGSize changeSize = [_change CGSizeValue];
-            CGSize sizeValue = CGSizeMake(fromSize.width + changeSize.width * _value, fromSize.height + changeSize.height * _value);
-            [_setter setArgument:&sizeValue atIndex:2];
-            break;
-        }
-*/
 
 @end
 
@@ -264,6 +218,70 @@
 {
     NSInteger intValue = _from + _change * value;
     [_setter setArgument:&intValue atIndex:2];
+    [_setter invoke];
+}
+
+@end
+
+
+@implementation GSTweenDataPoint
+
+- (id)initWithValue:(NSObject *)value getter:(NSInvocation *)getter setter:(NSInvocation *)setter
+{
+    self = [super init];
+    if (self)
+    {
+        _to = CGPointFromString((NSString*)value);
+        _getter = getter;
+        _setter = setter;
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup
+{
+    [_getter invoke];
+    [_getter getReturnValue:&_from];
+    _change = CGPointMake(_to.x - _from.x, _to.y - _from.y);
+}
+
+- (void)updateWithValue:(CGFloat)value
+{
+    CGPoint pointValue = CGPointMake(_from.x + _change.x * value, _from.y + _change.y * value);
+    [_setter setArgument:&pointValue atIndex:2];
+    [_setter invoke];
+}
+
+@end
+
+
+@implementation GSTweenDataSize
+
+- (id)initWithValue:(NSObject *)value getter:(NSInvocation *)getter setter:(NSInvocation *)setter
+{
+    self = [super init];
+    if (self)
+    {
+        _to = CGSizeFromString((NSString*)value);
+        _getter = getter;
+        _setter = setter;
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup
+{
+    [_getter invoke];
+    [_getter getReturnValue:&_from];
+    _change = CGSizeMake(_to.width - _from.width, _to.height - _from.height);
+}
+
+- (void)updateWithValue:(CGFloat)value
+{
+    CGSize sizeValue = CGSizeMake(_from.width + _change.width * value, _from.height + _change.height * value);
+    [_setter setArgument:&sizeValue atIndex:2];
     [_setter invoke];
 }
 
