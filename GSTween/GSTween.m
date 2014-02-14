@@ -25,6 +25,7 @@ NSString *const kGSTweenSpeed = @"speed";
     self = [super init];
     if (self)
     {
+        _version = @"0.1.0";
         _time = time;
         _target = target;
         _currentTime = 0.0f;
