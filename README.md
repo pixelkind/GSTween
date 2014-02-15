@@ -79,21 +79,21 @@ typedef CGFloat (^easeBlock)(CGFloat time);
 You can use the following optional parameters in the params-dictionary:
 
 * kGSTweenDelay (CGFloat, default 0.0f)
-** Add a delay to the beginning of the tween
+    * Add a delay to the beginning of the tween
 * kGSTweenYoYo (BOOL, default NO)
-** Add a YoYo-effect to your tween, playing the tween forward and afterwards backward
+    * Add a YoYo-effect to your tween, playing the tween forward and afterwards backward
 * kGSTweenAutoStart (BOOL, default YES)
-** Prevent the tween from auto-start, you can control with `[tween start]` when you want to start your tween
+    * Prevent the tween from auto-start, you can control with `[tween start]` when you want to start your tween
 * kGSTweenRepeat (NSInteger, default 0)
-** Control the number of repeats for a tween, -1 is an endless repeat
+    * Control the number of repeats for a tween, -1 is an endless repeat
 * kGSTweenSpeed (CGFloat, default 1.0f)
-** Control the playback speed of your tween or play it backwards
+    * Control the playback speed of your tween or play it backwards
 * kGSTweenOnStart
-** A block that is fired when the tween starts
+    * A block that is fired when the tween starts
 * kGSTweenOnUpdate
-** A block that is fired when the tween is updated, where progress is the current time elapsed (from 0.0f - 1.0f) and value the easing value (from 0.0f - 1.0f) `typedef void (^updateTweenBlock)(CGFloat progress, CGFloat value);`
+    * A block that is fired when the tween is updated, where progress is the current time elapsed (from 0.0f - 1.0f) and value the easing value (from 0.0f - 1.0f) `typedef void (^updateTweenBlock)(CGFloat progress, CGFloat value);`
 * kGSTweenOnComplete
-** A block that is fired when the tween stops
+    * A block that is fired when the tween stops
 
 
 ## License
