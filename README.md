@@ -3,10 +3,13 @@ GSTween
 
 A Tweening Library for Objective-C
 
-Please excuse the actual README. The documentation is currently being created and will be updated in the next days.
+The documentation is currently being created and will be updated constantly as required.
 
 
 ## Installation
+
+
+The instructions will be added soon.
 
 ### Source files
 
@@ -26,16 +29,16 @@ Please excuse the actual README. The documentation is currently being created an
 
 ### Basics
 
-As a first simple example, we want to tween the value of a `UIView` fram to `CGRectMake(0, 0, 320, 568)` with a bouncing ease out.
+As a first simple example, we want to tween the frame-value of a `UIView` to `CGRectMake(0, 0, 320, 568)` with a bouncing ease out.
 
-1. Add this import to the top of your file:
+1. Add this import to the top of your file (We need to import the GSTween and the Easing we want to use):
    
    ```objc
    #import <GSTween/GSTween.h>
    #import <GSTween/Bounce.h>
    ```
    
-2. Create a GSTween Object to create the simplest animation:
+2. Create a GSTween Object to create and instantly run the animation:
    
    ```objc
    [[GSTween alloc] initWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}" }];
@@ -45,10 +48,20 @@ As a first simple example, we want to tween the value of a `UIView` fram to `CGR
    
 Currently you can tween any property that is not readonly of the type `CGFloat`, `NSInteger`, `CGRect`, `CGSize` or `CGPoint`.
 
+Here are some examples how to write the values into the dictionary:
+
+```objc
+@{ "floatValue": @4.2f };
+@{ "integerValue": @42 };
+@{ "rectValue": @"{{100, 100}, {200, 200}}" };
+@{ @"sizeValue": @"{100, 100}" };
+@{ @"pointValue": @"{42, 42}" };
+```
+
 
 ### Special properties
 
-There are some special properties to use: `x`, `y`, `width`, `height`, `frameOrigin`, `frameSize`. If you have a `UIView` and you haven't a property named like one of these, GSTween will automatically create a tween of the frame property for you.
+There are some special properties to use: `x`, `y`, `width`, `height`, `frameOrigin`, `frameSize`. If you have a `UIView` and you have no property named like one of these, GSTween will automatically create a tween of the frame property for you, otherwise it will tween your property as you would expect.
 
 
 ### Easings
@@ -81,21 +94,26 @@ You can use the following optional parameters in the params-dictionary:
 * kGSTweenDelay (CGFloat, default 0.0f)
     * Add a delay to the beginning of the tween
 * kGSTweenYoYo (BOOL, default NO)
-    * Add a YoYo-effect to your tween, playing the tween forward and afterwards backward
+    * Add a YoYo-effect to your tween, playing the tween forward and rewind
 * kGSTweenAutoStart (BOOL, default YES)
     * Prevent the tween from auto-start, you can control with `[tween start]` when you want to start your tween
 * kGSTweenRepeat (NSInteger, default 0)
-    * Control the number of repeats for a tween, -1 is an endless repeat
+    * Control the number of repeats for a tween, -1 is an endless repeat, 0 is the default
 * kGSTweenSpeed (CGFloat, default 1.0f)
-    * Control the playback speed of your tween or play it backwards
+    * Control the playback speed of your tween or play it backwards (is used for the YoYo-effect)
 * kGSTweenOnStart
-    * A block that is fired when the tween starts
+    * A block that is fired when the tween starts `typedef void (^tweenBlock)();`
 * kGSTweenOnUpdate
     * A block that is fired when the tween is updated, where progress is the current time elapsed (from 0.0f - 1.0f) and value the easing value (from 0.0f - 1.0f) `typedef void (^updateTweenBlock)(CGFloat progress, CGFloat value);`
 * kGSTweenOnComplete
-    * A block that is fired when the tween stops
+    * A block that is fired when the tween stops `typedef void (^tweenBlock)();`
+
+
+### Control the tween
+
+You can start, stop, pause or resume a tween
 
 
 ## License
 
-This Library is licensed under the MIT License. Please refer to the LICENSE.txt for more information.
+This Library is licensed under the MIT License. Please refer to the `LICENSE.txt` for more information.
