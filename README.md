@@ -58,6 +58,12 @@ Here are some examples how to write the values into the dictionary:
 @{ @"pointValue": @"{42, 42}" };
 ```
 
+And as a bonus, you can tween as many values as you want in one tween-object:
+
+```objc
+[[GSTween alloc] initWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", @"floatValue": @4.2f, @"integerValue": @42 }];
+```
+
 
 ### Special properties
 
@@ -107,6 +113,14 @@ You can use the following optional parameters in the params-dictionary:
     * A block that is fired when the tween is updated, where progress is the current time elapsed (from 0.0f - 1.0f) and value the easing value (from 0.0f - 1.0f) `typedef void (^updateTweenBlock)(CGFloat progress, CGFloat value);`
 * kGSTweenOnComplete
     * A block that is fired when the tween stops `typedef void (^tweenBlock)();`
+
+```objc
+[[GSTween alloc] initWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", kGSTweenDelay: @2.0f, kGSTweenYoYo: @YES }];
+
+[[GSTween alloc] initWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", kGSTweenDelay: @2.0f, kGSTweenOnUpdate: ^(CGFloat progress, CGFloat value) {
+        NSLog(@"Current progress: %f", progress);
+    } }];
+```
 
 
 ### Control the tween
