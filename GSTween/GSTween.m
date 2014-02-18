@@ -20,12 +20,17 @@ NSString *const kGSTweenSpeed = @"speed";
 
 @implementation GSTween
 
++ (id)tweenWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease params:(NSDictionary*)params
+{
+    return [[self alloc] initWithTarget:target time:time ease:ease params:params];
+}
+
 - (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease params:(NSDictionary*)params
 {
     self = [super init];
     if (self)
     {
-        _version = @"0.1.0";
+        _version = @"0.1.1";
         _time = time;
         _target = target;
         _currentTime = 0.0f;

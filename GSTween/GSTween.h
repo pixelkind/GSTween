@@ -46,6 +46,8 @@ extern NSString *const kGSTweenSpeed;
 @property (nonatomic) CGFloat speed;
 @property (nonatomic, readonly) NSString* version;
 
++ (id)tweenWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease params:(NSDictionary*)params;
+
 - (id)initWithTarget:(NSObject*)target time:(CGFloat)time ease:(easeBlock)ease params:(NSDictionary*)params;
 - (void)start;
 - (void)stop;

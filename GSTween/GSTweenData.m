@@ -64,7 +64,6 @@
     
     if ([target respondsToSelector:getter] && [target respondsToSelector:setter])
     {
-        NSLog(@"RESPONDS TO SELECTOR");
         NSMethodSignature* getterSignature = [target methodSignatureForSelector:getter];
         NSMethodSignature* setterSignature = [target methodSignatureForSelector:setter];
         
@@ -78,15 +77,17 @@
         
         type = [[getterInvocation methodSignature] methodReturnType];
     }
+    else
+    {
+        NSLog(@"GSTween Warning: Property was not found on target!");
+    }
     
-    NSLog(@"TYPE: %s", type);
     if (strcmp(type, "d") == 0 || strcmp(type, "f") == 0)
     {
         return [[GSTweenDataFloat alloc] initWithValue:value getter:getterInvocation setter:setterInvocation];
     }
     else if (strcmp(type, "{CGRect={CGPoint=dd}{CGSize=dd}}") == 0 || strcmp(type, "{CGRect={CGPoint=ff}{CGSize=ff}}") == 0)
     {
-        NSLog(@"RECT!!!!");
         return [[GSTweenDataRect alloc] initWithValue:value getter:getterInvocation setter:setterInvocation];
     }
     else if (strcmp(type, "{CGPoint=dd}") == 0 || strcmp(type, "{CGPoint=dd}") == 0)

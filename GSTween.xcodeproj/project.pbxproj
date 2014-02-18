@@ -25,6 +25,8 @@
 		4464252118AD5BB5008F04EB /* Quintic.h in Headers */ = {isa = PBXBuildFile; fileRef = 4464251F18AD5BB5008F04EB /* Quintic.h */; };
 		4464252218AD5BB5008F04EB /* Quintic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4464252018AD5BB5008F04EB /* Quintic.m */; };
 		4464252318AD5C26008F04EB /* Quintic.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4464251F18AD5BB5008F04EB /* Quintic.h */; };
+		44A17B4C18B34B4500560293 /* Easings.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A17B4B18B34B4500560293 /* Easings.h */; };
+		44A17B4E18B34C0B00560293 /* Easings.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44A17B4B18B34B4500560293 /* Easings.h */; };
 		44C1AEF418A3A70600E24FD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C1AEF318A3A70600E24FD3 /* Foundation.framework */; };
 		44C1AEF918A3A70600E24FD3 /* GSTween.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44C1AEF818A3A70600E24FD3 /* GSTween.h */; };
 		44C1AEFB18A3A70600E24FD3 /* GSTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C1AEFA18A3A70600E24FD3 /* GSTween.m */; };
@@ -74,6 +76,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				44A17B4E18B34C0B00560293 /* Easings.h in CopyFiles */,
 				4464252318AD5C26008F04EB /* Quintic.h in CopyFiles */,
 				4464251E18AD5B65008F04EB /* Quartic.h in CopyFiles */,
 				4464251918AD5A27008F04EB /* Quadratic.h in CopyFiles */,
@@ -107,6 +110,7 @@
 		4464252018AD5BB5008F04EB /* Quintic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quintic.m; sourceTree = "<group>"; };
 		4464252418AD64F9008F04EB /* LICENSE_EASINGS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_EASINGS.txt; sourceTree = "<group>"; };
 		4464252518AD6581008F04EB /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		44A17B4B18B34B4500560293 /* Easings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Easings.h; sourceTree = "<group>"; };
 		44C1AEF018A3A70600E24FD3 /* libGSTween.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGSTween.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C1AEF318A3A70600E24FD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		44C1AEF718A3A70600E24FD3 /* GSTween-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSTween-Prefix.pch"; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				4464251F18AD5BB5008F04EB /* Quintic.h */,
 				4464252018AD5BB5008F04EB /* Quintic.m */,
 				4464252418AD64F9008F04EB /* LICENSE_EASINGS.txt */,
+				44A17B4B18B34B4500560293 /* Easings.h */,
 			);
 			path = easings;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				4464251C18AD5AEC008F04EB /* Quartic.h in Headers */,
 				44FC384418A3FD3200DB233A /* Linear.h in Headers */,
 				44FC384518A3FD3200DB233A /* Sine.h in Headers */,
+				44A17B4C18B34B4500560293 /* Easings.h in Headers */,
 				44FC389C18A428C900DB233A /* Expo.h in Headers */,
 				4464251218AD58DE008F04EB /* Cubic.h in Headers */,
 				44FC389718A4251A00DB233A /* Bounce.h in Headers */,
