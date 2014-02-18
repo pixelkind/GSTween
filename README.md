@@ -31,22 +31,24 @@ The instructions will be added soon.
 
 As a first simple example, we want to tween the frame-value of a `UIView` to `CGRectMake(0, 0, 320, 568)` with a bouncing ease out.
 
-1. Add this import to the top of your file (We need to import the GSTween and the Easing we want to use):
+1. Add this import to the top of your file (We need to import the GSTween and the easing we want to use, or we can import all easing header files):
    
    ```objc
+   //import GSTween
    #import <GSTween/GSTween.h>
-   #import <GSTween/Bounce.h>
+   //import all easing header files
+   #import <GSTween/Easings.h>
    ```
    
 2. Create a GSTween Object to create and instantly run the animation:
    
    ```objc
-   [[GSTween alloc] initWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}" }];
+   [GSTween tweenWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}" }];
    ```
    
    In this case we create a tween inside a `UIView`. We set the target to self, the animation time to 3 seconds and adding a bouncing ease out. Next we set the parameters in the `NSDictionary`. We want to tween the property frame, so we name the key of the dictionary the same and than we add the value we want to tween to. What you see in this example is the string representation for a CGRect.
    
-Currently you can tween any property that is not readonly of the type `CGFloat`, `NSInteger`, `CGRect`, `CGSize` or `CGPoint`.
+Currently you can tween any property that is not readonly of the type `CGFloat`, `NSInteger`, `CGRect`, `CGSize` or `CGPoint`. If GSTween don't find the property on the target, it will throw you a warning in the log.
 
 Here are some examples how to write the values into the dictionary:
 
@@ -61,7 +63,7 @@ Here are some examples how to write the values into the dictionary:
 And as a bonus, you can tween as many values as you want in one tween-object:
 
 ```objc
-[[GSTween alloc] initWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", @"floatValue": @4.2f, @"integerValue": @42 }];
+[GSTween tweenWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", @"floatValue": @4.2f, @"integerValue": @42 }];
 ```
 
 
@@ -115,9 +117,9 @@ You can use the following optional parameters in the params-dictionary:
     * A block that is fired when the tween stops `typedef void (^tweenBlock)();`
 
 ```objc
-[[GSTween alloc] initWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", kGSTweenDelay: @2.0f, kGSTweenYoYo: @YES }];
+[GSTween tweenWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", kGSTweenDelay: @2.0f, kGSTweenYoYo: @YES }];
 
-[[GSTween alloc] initWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", kGSTweenDelay: @2.0f, kGSTweenOnUpdate: ^(CGFloat progress, CGFloat value) {
+[GSTween tweenWithTarget:self time:3.0f ease:[Bounce easeOut] params:@{ @"frame": @"{{0,0},{320,568}}", kGSTweenDelay: @2.0f, kGSTweenOnUpdate: ^(CGFloat progress, CGFloat value) {
         NSLog(@"Current progress: %f", progress);
     } }];
 ```
