@@ -23,7 +23,7 @@ static CGFloat _aValue = 1.0f;
             return 1.0f;
         
         CGFloat postfix = pow(2.0f, 10.0f * (time -= 1.0f));
-        return -(postfix * sin((time - _sValue) * M_2_PI / _pValue));
+        return -(postfix * sin((time - _sValue) * (M_PI * 2) / _pValue));
     };
 }
 
@@ -35,7 +35,7 @@ static CGFloat _aValue = 1.0f;
         if (time == 1.0f)
             return 1.0f;
         
-        return pow(2.0f, (-10.0f * time)) * sin( (time - _sValue) * M_2_PI / _pValue ) + 1.0f;
+        return pow(2.0f, (-10.0f * time)) * sin( (time - _sValue) * (M_PI * 2) / _pValue ) + 1.0f;
     };
 }
 
@@ -51,10 +51,10 @@ static CGFloat _aValue = 1.0f;
         if (time < 1)
         {
             CGFloat postfix = pow(2.0f, 10.0f * (time -= 1.0f));
-            return -0.5f * (postfix * sin((time - _sValue) * M_2_PI / _pValue));
+            return -0.5f * (postfix * sin((time - _sValue) * (M_PI * 2) / _pValue));
         }
         CGFloat postfix = pow(2.0f, - 10.0f * (time -= 1.0f));
-        return postfix * sin((time - _sValue) * M_2_PI / _pValue) * 0.5f + 1.0f;
+        return postfix * sin((time - _sValue) * (M_PI * 2) / _pValue) * 0.5f + 1.0f;
     };
 }
 
@@ -72,7 +72,7 @@ static CGFloat _aValue = 1.0f;
     }
     else
     {
-        _sValue = _pValue / M_2_PI * asin(1.0f / _aValue);
+        _sValue = _pValue / (M_PI * 2) * asin(1.0f / _aValue);
     }
 }
 
@@ -86,7 +86,7 @@ static CGFloat _aValue = 1.0f;
     if (aValue >= 1.0f)
     {
         _aValue = aValue;
-        _sValue = _pValue / M_2_PI * asin(1.0f / _aValue);
+        _sValue = _pValue / (M_PI * 2) * asin(1.0f / _aValue);
     }
 }
 
