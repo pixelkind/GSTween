@@ -111,6 +111,7 @@
 		4464252418AD64F9008F04EB /* LICENSE_EASINGS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_EASINGS.txt; sourceTree = "<group>"; };
 		4464252518AD6581008F04EB /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		44A17B4B18B34B4500560293 /* Easings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Easings.h; sourceTree = "<group>"; };
+		44BAC088197825CA003DB883 /* GSTween.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GSTween.podspec; sourceTree = "<group>"; };
 		44C1AEF018A3A70600E24FD3 /* libGSTween.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGSTween.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C1AEF318A3A70600E24FD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		44C1AEF718A3A70600E24FD3 /* GSTween-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSTween-Prefix.pch"; sourceTree = "<group>"; };
@@ -166,6 +167,7 @@
 		44C1AEE718A3A70600E24FD3 = {
 			isa = PBXGroup;
 			children = (
+				44BAC088197825CA003DB883 /* GSTween.podspec */,
 				44C1AEF518A3A70600E24FD3 /* GSTween */,
 				44C1AF0918A3A70600E24FD3 /* GSTweenTests */,
 				44C1AEF218A3A70600E24FD3 /* Frameworks */,

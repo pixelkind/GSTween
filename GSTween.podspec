@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GSTween"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "GSTween is a tweening library for Objective-C."
 
   s.description  = <<-DESC
