@@ -186,12 +186,13 @@ NSString *const kGSTweenSpeed = @"speed";
 
 - (void)stop
 {
+    id retained = self;
     if (_completeBlock)
     {
         _completeBlock();
     }
     [_displayLink invalidate];
-    [self reset];
+    [retained reset];
 }
 
 - (void)pause
