@@ -209,6 +209,7 @@ NSString *const kGSTweenSpeed = @"speed";
     if (_isPaused)
     {
         [self setupDisplayLink];
+        _isPaused = NO;
     }
 }
 
