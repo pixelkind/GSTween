@@ -22,6 +22,7 @@
     
     if ((![target respondsToSelector:getter] || ![target respondsToSelector:setter]) && [reserved indexOfObject:key] != NSNotFound)
     {
+#if TARGET_OS_IOS
         if ([key isEqualToString:@"frameOrigin"])
         {
             key = @"frame";
@@ -58,6 +59,7 @@
             CGRect frame = [(id)target frame];
             value = [NSString stringWithFormat:@"{{%f,%f},%@}", frame.origin.x, frame.origin.y, value];
         }
+#endif
         getter = NSSelectorFromString(key);
         setter = NSSelectorFromString([NSString stringWithFormat:@"set%@:", [[[key substringToIndex:1] uppercaseString] stringByAppendingString:[key substringFromIndex:1]]]);
     }
@@ -168,7 +170,7 @@
     self = [super init];
     if (self)
     {
-        _to = CGRectFromString((NSString*)value);
+        _to = GSTweenRectFromString((NSString*)value);
         _getter = getter;
         _setter = setter;
         [self setup];
@@ -232,7 +234,7 @@
     self = [super init];
     if (self)
     {
-        _to = CGPointFromString((NSString*)value);
+        _to = GSTweenPointFromString((NSString*)value);
         _getter = getter;
         _setter = setter;
         [self setup];
@@ -264,7 +266,7 @@
     self = [super init];
     if (self)
     {
-        _to = CGSizeFromString((NSString*)value);
+        _to = GSTweenSizeFromString((NSString*)value);
         _getter = getter;
         _setter = setter;
         [self setup];
