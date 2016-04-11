@@ -3,7 +3,7 @@ GSTween
 
 A Tweening Library for Objective-C
 
-GSTween is now available via Cocoapods!
+GSTween is now available via CocoaPods!
 
 The documentation is currently being created and will be updated constantly as required.
 
@@ -19,7 +19,7 @@ The instructions will be added soon.
 ### Static library
 
 
-### Cocoapods
+### CocoaPods
 
 
 ## Requirements
