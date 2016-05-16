@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Garrit Schaap. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
 typedef CGFloat (^easeBlock)(CGFloat time);
@@ -31,7 +30,11 @@ extern NSString *const kGSTweenSpeed;
     NSMutableArray* _values;
     easeBlock _ease;
     CGFloat _delay;
-    CADisplayLink* _displayLink;
+#if TARGET_OS_IOS
+		CADisplayLink* _displayLink;
+#else
+		CVDisplayLinkRef _displayLink; // or NSDisplayLink or CADisplayLinkRef ???
+#endif
     BOOL _isYoyo;
     NSInteger _repeat;
     NSInteger _repeatCount;

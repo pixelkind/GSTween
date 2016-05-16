@@ -5,8 +5,15 @@
 //  Created by Garrit Schaap on 06.02.14.
 //  Copyright (c) 2014 Garrit Schaap. All rights reserved.
 //
-
-#import <UIKit/UIKit.h>
+#if TARGET_OS_IOS
+#define GSTweenRectFromString CGRectFromString
+#define GSTweenSizeFromString CGSizeFromString
+#define GSTweenPointFromString CGPointFromString
+#else
+#define GSTweenRectFromString NSRectFromString
+#define GSTweenSizeFromString NSSizeFromString
+#define GSTweenPointFromString NSPointFromString
+#endif
 
 @interface GSTweenData : NSObject
 {
